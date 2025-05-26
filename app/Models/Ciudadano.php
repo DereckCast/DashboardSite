@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Ciudadano extends Model
 {
-   protected $fillable = ['nombre', 'email', 'ciudad_id'];
+    use HasFactory;
+
+    protected $table = 'ciudadanos';
+
+    protected $fillable = ['nombre', 'email', 'ciudad_id'];
 
     public function ciudad()
     {
