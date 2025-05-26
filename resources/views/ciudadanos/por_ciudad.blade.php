@@ -12,12 +12,21 @@
         @foreach ($ciudades as $ciudad)
             <div class="bg-white mb-4 rounded shadow p-4">
                 <h3 class="text-lg font-bold">{{ $ciudad->nombre }}</h3>
+
                 @if ($ciudad->ciudadanos->count())
-                    <table class="w-full mt-2 table-auto border">
-                        <thead><tr><th class="border px-2">Nombre</th></tr></thead>
+                    <table class="w-full mt-2 table-auto border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="border px-4 py-2 text-left">Nombre</th>
+                                <th class="border px-4 py-2 text-left">Email</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             @foreach ($ciudad->ciudadanos as $c)
-                                <tr><td class="border px-2">{{ $c->nombre }}</td></tr>
+                                <tr>
+                                    <td class="border px-4 py-2">{{ $c->nombre }}</td>
+                                    <td class="border px-4 py-2">{{ $c->email }}</td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -26,5 +35,6 @@
                 @endif
             </div>
         @endforeach
+
     </div>
 </x-app-layout>

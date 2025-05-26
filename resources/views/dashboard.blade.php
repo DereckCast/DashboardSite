@@ -10,16 +10,28 @@
             <div class="bg-white p-4 rounded shadow">
                 <h3 class="font-bold mb-2">Ciudadanos por Ciudad</h3>
                 <ul>
-                    @foreach ($ciudades as $ciudad)
-                        <li>{{ $ciudad->nombre }}: {{ $ciudad->ciudadanos_count }}</li>
+                    @foreach ($ciudadanosPorCiudad as $item)
+                        <li>{{ $item['nombre'] }}: {{ $item['cantidad'] }}</li>
                     @endforeach
                 </ul>
             </div>
         </div>
 
-        <form method="POST" action="{{ route('reporte.enviar') }}" class="mt-6">
-            @csrf
-            <button class="bg-blue-600 text-white px-4 py-2 rounded">Enviar Reporte por Correo</button>
-        </form>
+        <div class="mt-6 flex justify-center">
+            <div class="mt-6 max-w-md mx-auto">
+                <form method="POST" action="{{ route('reporte.enviar') }}" class="bg-white p-4 rounded shadow space-y-4">
+                    @csrf
+                    <label class="block text-sm font-medium text-gray-700">Correo destinatario</label>
+                    <input type="email" name="email" required placeholder="ejemplo@correo.com"
+                        class="w-full border border-gray-300 p-2 rounded">
+
+                    <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow w-full">
+                        Enviar Reporte por Correo
+                    </button>
+                </form>
+            </div>
+        </div>
+
     </div>
 </x-app-layout>

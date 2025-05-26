@@ -15,6 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('ciudadanos.por-ciudad')" :active="request()->routeIs('ciudadanos.por-ciudad')">
+                        {{ __('Ciudadanos por Ciudad') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('ciudadanos.index')" :active="request()->routeIs('ciudadanos.index')">
+                        Ciudadanos
+                    </x-nav-link>
+                    <x-nav-link :href="route('ciudades.index')" :active="request()->routeIs('ciudades.index')">
+                        Ciudades
+                    </x-nav-link>
+
                 </div>
             </div>
 
