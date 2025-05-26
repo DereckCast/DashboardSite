@@ -24,6 +24,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/ciudadanos', [DashboardController::class, 'indexCiudadanos'])->name('ciudadanos.index');
     Route::get('/ciudades', [DashboardController::class, 'indexCiudades'])->name('ciudades.index');
     Route::delete('/ciudadano/{id}', [DashboardController::class, 'eliminarCiudadano'])->name('ciudadano.eliminar');
+    Route::post('/ciudad/guardar', [DashboardController::class, 'guardarCiudad'])->name('ciudad.guardar');
 
 
 });

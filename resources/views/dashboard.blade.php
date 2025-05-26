@@ -8,10 +8,10 @@
             <div class="bg-white p-4 rounded shadow">Total Ciudades: {{ $totalCiudades }}</div>
             <div class="bg-white p-4 rounded shadow">Total Ciudadanos: {{ $totalCiudadanos }}</div>
             <div class="bg-white p-4 rounded shadow">
-                <h3 class="font-bold mb-2">Ciudadanos por Ciudad</h3>
+                <h3>Ciudadanos por Ciudad</h3>
                 <ul>
-                    @foreach ($ciudadanosPorCiudad as $item)
-                        <li>{{ $item['nombre'] }}: {{ $item['cantidad'] }}</li>
+                    @foreach ($ciudades as $ciudad)
+                        <li>{{ $ciudad->nombre }}: {{ $ciudad->ciudadanos_count }}</li>
                     @endforeach
                 </ul>
             </div>
