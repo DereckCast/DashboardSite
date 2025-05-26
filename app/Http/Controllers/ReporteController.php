@@ -14,6 +14,6 @@ class ReporteController extends Controller
         $datos = Ciudad::with('ciudadanos')->get();
         Mail::to('dacastilloc@uamv.edu.ni')->send(new ReportMail($datos));
 
-        return redirect()->back()->with('success', 'Reporte enviado correctamente.');
+    return redirect()->back()->with('status', 'Reporte enviado con éxito al correo: ' . $request->email);
     }
 }
